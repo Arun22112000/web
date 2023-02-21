@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="postgresql"/>
+    <changeSet author="Sangeetha" id="insert-menu-table">
+        <preConditions  onFail="MARK_RAN">
+            <sqlCheck  expectedResult="0">select count(*) from menu</sqlCheck>
+        </preConditions>
+        <insert tableName="menu">
+            <column name="menu_id" value="1" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="menu_name" value="Services"/>
+        </insert>
+        <insert tableName="menu">
+            <column name="menu_id" value="2" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="menu_name" value="Resources"/>
+        </insert>
+        <insert tableName="menu">
+            <column name="menu_id" value="3" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="menu_name" value="About"/>
+        </insert>
+        <insert tableName="menu">
+            <column name="menu_id" value="4" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="menu_name" value="Blog"/>
+        </insert>
+        <insert tableName="menu">
+            <column name="menu_id" value="5" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="menu_name" value="Contact Us"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="Sangeetha" id="insert-sub-menu-table">
+    <preConditions  onFail="MARK_RAN">
+        <sqlCheck  expectedResult="0">select count(*) from sub_menu</sqlCheck>
+    </preConditions>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="1" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="ServiceNow"/>
+            <column name="menu_id" value="1"/>
+        </insert>
+    <insert tableName="sub_menu">
+        <column name="sub_menu_id" value="2" />
+        <column name="changed_by"  value="1"/>
+        <column name="changed_at"  valueDate="${now}"/>
+        <column name="created_at"  valueDate="${now}"/>
+        <column name="created_by"  value="1"/>
+        <column name="sub_menu_name" value="Scala Application Development"/>
+        <column name="menu_id" value="1"/>
+    </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="3" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Digital Transformation"/>
+            <column name="menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="4" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Salesforce"/>
+            <column name="menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="5" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Data Solution"/>
+            <column name="menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="6" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Case Studies"/>
+            <column name="menu_id" value="2"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="7" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Webinars"/>
+            <column name="menu_id" value="2"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="8" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Success Stories"/>
+            <column name="menu_id" value="2"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="9" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Leadership"/>
+            <column name="menu_id" value="3"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="10" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Our Culture"/>
+            <column name="menu_id" value="3"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="11" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="QNews"/>
+            <column name="menu_id" value="3"/>
+        </insert>
+        <insert tableName="sub_menu">
+            <column name="sub_menu_id" value="12" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_menu_name" value="Careers"/>
+            <column name="menu_id" value="3"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="Sangeetha" id="insert-sub-sub-menu-table">
+    <preConditions  onFail="MARK_RAN">
+        <sqlCheck  expectedResult="0">select count(*) from sub_sub_menu</sqlCheck>
+    </preConditions>
+    <insert tableName="sub_sub_menu">
+        <column name="sub_sub_menu_id" value="1" />
+        <column name="changed_by"  value="1"/>
+        <column name="changed_at"  valueDate="${now}"/>
+        <column name="created_at"  valueDate="${now}"/>
+        <column name="created_by"  value="1"/>
+        <column name="sub_sub_menu_name" value="IT Service Management (ITSM)"/>
+        <column name="sub_menu_id" value="1"/>
+    </insert>
+        <insert tableName="sub_sub_menu">
+            <column name="sub_sub_menu_id" value="2" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_sub_menu_name" value="IT Operations Management (ITOM)"/>
+            <column name="sub_menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_sub_menu">
+            <column name="sub_sub_menu_id" value="3" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_sub_menu_name" value="Customer Service Management (CSM)"/>
+            <column name="sub_menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_sub_menu">
+            <column name="sub_sub_menu_id" value="4" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_sub_menu_name" value="HR Service Delivery (HRSD)"/>
+            <column name="sub_menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_sub_menu">
+            <column name="sub_sub_menu_id" value="5" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_sub_menu_name" value="Governance Risk and Compliance Management (GRC)"/>
+            <column name="sub_menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_sub_menu">
+            <column name="sub_sub_menu_id" value="6" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_sub_menu_name" value="Field Service Management (FSM)"/>
+            <column name="sub_menu_id" value="1"/>
+        </insert>
+        <insert tableName="sub_sub_menu">
+            <column name="sub_sub_menu_id" value="7" />
+            <column name="changed_by"  value="1"/>
+            <column name="changed_at"  valueDate="${now}"/>
+            <column name="created_at"  valueDate="${now}"/>
+            <column name="created_by"  value="1"/>
+            <column name="sub_sub_menu_name" value="Microservice Architecture"/>
+            <column name="sub_menu_id" value="3"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
+

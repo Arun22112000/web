@@ -1,0 +1,41 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id "com.google.cloud.tools.jib" version "3.2.1"
+	id 'jacoco'
+}
+
+group = 'com.qbrainx'
+version = '1'
+sourceCompatibility = '1.8'
+
+apply from: "./gradle/dockerhub.gradle"
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation('org.springdoc:springdoc-openapi-ui:1.5.12')
+	implementation 'org.modelmapper:modelmapper:3.1.0'
+	implementation 'net.sf.dozer:dozer:5.5.1'
+	implementation("org.liquibase:liquibase-core")
+	implementation 'commons-io:commons-io:2.11.0'
+	implementation 'org.http4s:http4s-tomcat_2.12:1.0-234-d1a2b53'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+

@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  qbrainx:
+    baseURL: http://www.qbrainx.com
+  servlet:
+    context-path: /qbrainx-web
+  compression:
+    enabled: true
+    mime-types: image/jpg, image/jpeg, image/gif
+spring:
+  datasource:
+    url: jdbc:postgresql://34.127.25.181:5432/Qbrainx_dev
+    username: flexcubdev
+    password: flexcubdev
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+liquibase:
+  enabled: true
+qbrainx:
+  static:
+    path: /data/static
+    url: http://localhost/static
+  banner:
+    path: /banner
+  section:
+    image:
+      path: /image/banner
+springdoc:
+  group-configs:
+    - group: qbrainx-website
+      packagesToScan:
+        - "com.web"
+  swagger-ui:
+    path: /qbrainx-1336586310L-swagger-ui.html
+  api-docs:
+    path: /v3/qbrainx-1336586310L-api-docs
